@@ -1,6 +1,9 @@
 package com.company;
 
 public class AddressEntry {
+    /**
+     * Declaring variables
+     */
     private String firstName;
     private String lastName;
     private String street;
@@ -10,6 +13,15 @@ public class AddressEntry {
     private String phone;
     private String email;
 
+    /**
+     * @param firstName: First Name
+     * @param lastName: Last Name
+     * @param street: Street
+     * @param state: State, assuming they live in the US
+     * @param zip: Zip Code
+     * @param phone: Phone number
+     * @param email: Email
+     */
     public AddressEntry(String firstName, String lastName, String street, String state, int zip, String phone,
                          String email) {
         this.firstName = firstName;
@@ -20,6 +32,10 @@ public class AddressEntry {
         this.phone = phone;
         this.email = email;
     }
+
+    /**
+     *  Getters and Setters for all
+     */
 
     public String getFirstName() {
         return firstName;
@@ -72,7 +88,6 @@ public class AddressEntry {
     public String getPhone() {
         return phone;
     }
-
 
     public void setPhone(String phone) {
         this.phone = phone;
