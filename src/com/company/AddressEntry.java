@@ -14,6 +14,21 @@ public class AddressEntry {
     private String email;
 
     /**
+     * 0 args AddressEntry constructor
+     */
+    public AddressEntry() {
+        this.firstName = "";
+        this.lastName = "";
+        this.street = "";
+        this.city = "";
+        this.state = "";
+        this.zip = 0;
+        this.phone = "";
+        this.email = "";
+    }
+
+    /**
+     * Multi args AddressEntry constuctor
      * @param firstName: First Name
      * @param lastName: Last Name
      * @param street: Street
@@ -33,76 +48,146 @@ public class AddressEntry {
         this.email = email;
     }
 
-    /**
-     *  Getters and Setters for all
-     */
 
+    /**
+     * Returns first name
+     * @return firstName
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Sets first name
+     * @param firstName
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * Returns last name
+     * @return lastName
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * Sets last name
+     * @param lastName
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     * Returns street
+     * @return street
+     */
     public String getStreet() {
         return street;
     }
 
+    /**
+     * Sets street
+     * @param street
+     */
     public void setStreet(String street) {
         this.street = street;
     }
 
+    /**
+     * Returns city
+     * @return city
+     */
     public String getCity() {
         return city;
     }
 
+    /**
+     * Sets city
+     * @param city
+     */
     public void setCity(String city) {
         this.city = city;
     }
 
+    /**
+     * Returns state
+     * @return
+     */
     public String getState() {
         return state;
     }
 
+    /**
+     * Sets state
+     * @param state
+     */
     public void setState(String state) {
         this.state = state;
     }
 
+    /**
+     * Returns zip
+     * @return zip
+     */
     public int getZip() {
         return zip;
     }
 
+    /**
+     * Sets zip
+     * @param zip
+     */
     public void setZip(int zip) {
         this.zip = zip;
     }
 
+    /**
+     * Returns phone number
+     * @return phone
+     */
     public String getPhone() {
         return phone;
     }
 
+    /**
+     * Sets phone
+     * @param phone
+     */
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
+    /**
+     * Returns email address
+     * @return email
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Sets email address
+     * @param email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String toString() {
-        return "FirstName: " + firstName + ", Last Name: " + lastName + ", Street: " + street + ", City: " + city + ", State: " + state + ", Zip: " + zip + ", Phone: " + phone + " , Email: " + email;
+    /**
+     * Method to compare AddressEntries. First compares lastName, and if necessary, compares firstName
+     * @param differentAddressEntry
+     * @return
+     */
+    public int compareTo(AddressEntry differentAddressEntry) {
+        int compareValue = this.lastName.compareTo(differentAddressEntry.lastName);
+        if (compareValue == 0 ) {
+            return this.firstName.compareTo(differentAddressEntry.firstName);
+        }
+        return compareValue;
     }
 
 }
